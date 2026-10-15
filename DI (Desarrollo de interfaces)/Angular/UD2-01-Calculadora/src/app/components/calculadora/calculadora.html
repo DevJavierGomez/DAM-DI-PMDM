@@ -1,0 +1,23 @@
+<div class="card mx-auto mt-4" style="max-width: 400px;">
+  <div class="card-header bg-primary text-white text-center">
+    <h4 class="mb-0">Calculadora</h4>
+  </div>
+
+  <div class="card-body">
+    <div class="alert alert-dark text-end fs-3 mb-3">
+      {{ screen }}
+    </div>
+
+    <div class="d-flex gap-2 mb-2">
+      <button class="btn btn-secondary w-33" (click)="escribirNumero('1')">1</button>
+      <button class="btn btn-secondary w-33" (click)="escribirNumero('2')">2</button>
+      <button class="btn btn-success w-33" (click)="clear()">Limpiar</button>
+    </div>
+
+    <div class="d-flex gap-2 mb-3">
+      <button class="btn btn-primary w-50" (click)="sumar()">+</button>
+      <button class="btn btn-primary w-50" (click)="restar()">-</button>
+      <button class="btn btn-success w-50" (click)="resultado()">=</button>
+    </div>
+  </div>
+</div>
