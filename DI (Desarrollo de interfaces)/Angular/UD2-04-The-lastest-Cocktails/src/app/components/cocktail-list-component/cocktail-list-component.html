@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Catálogo de Cócteles</h2>
+
+  <div class="row g-3">
+    @for (cocktail of cocktailList(); track cocktail.idDrink) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-cocktail-item-component [drink]="cocktail" />
+      </div>
+    }
+  </div>
+</div>
