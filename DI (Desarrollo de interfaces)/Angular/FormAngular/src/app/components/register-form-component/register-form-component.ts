@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './register-form-component.html',
 })
 export class RegisterFormComponent {
-
   nombre = '';
   apellidos = '';
   nif = '';
@@ -31,7 +30,7 @@ export class RegisterFormComponent {
       comoConocio: this.comoConocio,
       password: this.password,
       confirmarPassword: this.confirmarPassword,
-      terminos: this.terminos
+      terminos: this.terminos,
     });
   }
 }
