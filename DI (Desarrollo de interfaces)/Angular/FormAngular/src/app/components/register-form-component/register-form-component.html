@@ -1,0 +1,77 @@
+<div class="form-field mb-3">
+  <label for="fieldNombre" class="form-label">Nombre</label>
+  <input type="text" class="form-control" id="fieldNombre" placeholder="Escribe tu nombre" [(ngModel)]="nombre">
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldApellidos" class="form-label">Apellidos</label>
+  <input type="text" class="form-control" id="fieldApellidos" placeholder="Escribe tus apellidos" [(ngModel)]="apellidos">
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldNif" class="form-label">NIF</label>
+  <input type="text" class="form-control" id="fieldNif" placeholder="12345678X" [(ngModel)]="nif">
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldEmail" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="fieldEmail" placeholder="name@example.com" [(ngModel)]="emailForm">
+  <div class="form-text">
+    El valor del email es: {{ emailForm }}
+  </div>
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldTelefono" class="form-label">Teléfono</label>
+  <input type="tel" class="form-control" id="fieldTelefono" placeholder="+34 600 00 00 00" [(ngModel)]="telefono">
+</div>
+
+<div class="form-field mb-3">
+  <label class="form-label d-block">Sexo</label>
+  <div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input" id="sexoHombre" name="sexo" value="buscando en Google" [(ngModel)]="sexo">
+    <label for="sexoHombre" class="form-check-label">Hombre</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input" id="sexoMujer" name="sexo" value="mujer" [(ngModel)]="sexo">
+    <label for="sexoMujer" class="form-check-label">Mujer</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input type="radio" class="form-check-input" id="sexoOtro" name="sexo" value="otro" [(ngModel)]="sexo">
+    <label for="sexoOtro" class="form-check-label">Otro</label>
+  </div>
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldComoConocio" class="form-label">¿Cómo conoció la página?</label>
+
+  <select class="form-select" id="fieldComoConocio" [(ngModel)]="comoConocio">
+    <option value="" disabled selected>Seleccione una opción</option>
+    <option value="buscando en Google">Buscando en Google</option>
+    <option value="a través de un amigo">A través de un amigo</option>
+    <option value="por mi profesor">Por mi profesor</option>
+  </select>
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldPassword" class="form-label">Contraseña</label>
+  <input type="password" class="form-control" id="fieldPassword" placeholder="Tu contraseña" [(ngModel)]="password">
+</div>
+
+<div class="form-field mb-3">
+  <label for="fieldConfirmarPassword" class="form-label">Confirmar contraseña</label>
+  <input type="password" class="form-control" id="fieldConfirmarPassword" placeholder="Repite la contraseña" [(ngModel)]="confirmarPassword">
+</div>
+
+<div class="form-field mb-3 form-check">
+  <input type="checkbox" class="form-check-input" id="fieldTerminos" [(ngModel)]="terminos">
+  <label for="fieldTerminos" class="form-check-label">
+    Acepto los términos y condiciones del registro
+  </label>
+</div>
+
+<button type="button" (click)="sendForm()" class="theme-primary btn-solid btn-styled">
+  Enviar formular
+</button>
