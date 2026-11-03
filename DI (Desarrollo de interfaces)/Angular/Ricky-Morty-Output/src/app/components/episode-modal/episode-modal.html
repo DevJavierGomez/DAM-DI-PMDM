@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h4 class="modal-title"></h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <img [src]="`https://rickandmortyapi.com/api/episode/${EpisodeDetail?.id}.png`"
+  class="card-img-top" alt="...">
+  <p>Episode: {{EpisodeDetail?.name}}!</p>
+  <p>Detail: {{EpisodeDetail?.episode}}</p>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activateModal.close()">Close</button>
+</div>

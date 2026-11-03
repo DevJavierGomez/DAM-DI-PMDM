@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">Personajes</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  <img [src]="`https://rickandmortyapi.com/api/location/${CharacterDetail?.info}.png`"
+  class="card-img-top">
+  <p>Personajes: {{ CharacterDetail?.info }}!</p>
+  <p>Detalles: {{ CharacterDetail?.results }}</p>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn-outline-secondary" (click)="activeModal.close()">Cerrar</button>
+</div>

@@ -1,0 +1,9 @@
+<section class="card" style="max-width: 320px;">
+  <img [src]="'https://rickandmortyapi.com/api/episode/${getEpisodeId()}.png'"
+  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{Episode()?.episode}}</h4>
+    <p class="card-text">{{Episode()?.url}}</p>
+    <button type="button" class="btn-solid theme-primary" (click)="emitEpisodeClicked()">Ver detalles</button>
+  </div>
+</section>

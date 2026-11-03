@@ -1,0 +1,9 @@
+<div class="row">
+  @for (Epi of EpisodeList(); track Epi.episode) {
+    <div class="col-md-3">
+      <app-episode-item-component [Episode]="Epi"
+      (EpisodeClicked)="openEpisodeModal($event)">
+      </app-episode-item-component>
+    </div>
+  }
+</div>

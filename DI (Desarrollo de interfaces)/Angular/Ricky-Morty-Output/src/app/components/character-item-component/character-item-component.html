@@ -1,0 +1,9 @@
+<section class="card" style="max-width: 320px;">
+  <img [src]="`https://rickandmortyapi.com/api/location/${getCharacter()}`"
+  class="card-img-top">
+  <div class="card-body">
+    <h4 class="card-title">{{ Character()?.name}}</h4>
+    <p class="card-text">{{Character()?.url}}</p>
+    <button type="button" class="btn-solid theme-primary" (click)="emitCharacterClicked()">Ver detalles</button>
+  </div>
+</section>
