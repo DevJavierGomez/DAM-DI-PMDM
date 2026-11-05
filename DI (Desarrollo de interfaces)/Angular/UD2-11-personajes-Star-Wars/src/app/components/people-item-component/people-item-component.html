@@ -1,0 +1,9 @@
+<section class="card" style="max-width: 320px">
+  <img [src]="`https://swapi.dev/api/planets/${getPeopleId()}.png`"
+  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{People()?.name}}</h4>
+    <p class="card-text">{{People()?.url}}</p>
+    <button type="button" class="btn-solid theme-primary" (click)="emitPeopleClicked()">Ver detalles</button>
+  </div>
+</section>

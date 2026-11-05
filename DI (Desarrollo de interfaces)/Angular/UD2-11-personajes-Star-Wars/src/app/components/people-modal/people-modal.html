@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title">Personajes Star-Wars</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <img [src]="`https://swapi.dev/api/planets/${PeopleDetail?.results}.png`"
+  class="card-img-top" alt="...">
+  <p>People: {{PeopleDetail?.previous}}!</p>
+  <p>Height: {{PeopleDetail?.next}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activateModal.close()"></button>
+</div>
