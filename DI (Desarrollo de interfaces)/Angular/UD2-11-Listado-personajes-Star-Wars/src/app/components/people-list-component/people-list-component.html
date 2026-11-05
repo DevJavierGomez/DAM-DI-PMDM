@@ -1,0 +1,9 @@
+<div class="row">
+  @for (People of PeopleList(); track People.name) {
+    <div class="col-md-3">
+      <app-people-item-component [People]="People"
+      (PeopleClicked)="openPeopleModal($event)">
+      </app-people-item-component>
+    </div>
+  }
+</div>

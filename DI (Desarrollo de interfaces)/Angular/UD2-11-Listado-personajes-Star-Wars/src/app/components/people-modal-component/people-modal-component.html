@@ -1,0 +1,11 @@
+<div class="modal-header">
+			<h4 class="modal-title">{{PeopleDetail?.name}}</h4>
+			<button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss()"></button>
+		</div>
+		<div class="modal-body">
+			<p>{{ PeopleDetail?.height }}</p>
+      <p>{{ PeopleDetail?.eye_color }}</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-outline-secondary" (click)="activateModal.close()">Close</button>
+		</div>
