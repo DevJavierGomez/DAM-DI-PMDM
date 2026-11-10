@@ -1,0 +1,48 @@
+<div class="container mt-4" style="max-width: 600px;">
+  <form [formGroup]="form" (ngSubmit)="sendForm()">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Título:</label>
+      <input id="title" type="text" class="form-control" formControlName="title" />
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción:</label>
+      <textarea id="description" class="form-control" rows="3" formControlName="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Categoría:</label>
+      <select id="category" class="form-select" formControlName="category">
+        <option value="">Selecciona una categoría</option>
+        <option value="Tecnología">Tecnología</option>
+        <option value="Diseño">Diseño</option>
+        <option value="Programación">Programación</option>
+        <option value="Novedades">Novedades</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="tags" class="form-label">Etiquetas:</label>
+      <input id="tags" type="text" class="form-control" formControlName="tags" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email (Correo):</label>
+      <input id="email" type="email" class="form-control" formControlName="email" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input id="publishNow" type="checkbox" class="form-check-input" formControlName="publishNow" />
+      <label for="publishNow" class="form-check-label">Publicar ahora</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="publishDate" class="form-label">Fecha de publicación:</label>
+      <input id="publishDate" type="date" class="form-control" formControlName="publishDate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+  </form>
+</div>
