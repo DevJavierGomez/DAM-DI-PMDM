@@ -2,10 +2,10 @@ export interface AbilityListResponse {
   count: number
   next: string
   previous: any
-  results: Result[]
+  results: AbilityItem[]
 }
 
-export interface Result {
+export interface AbilityItem {
   name: string
   url: string
 }

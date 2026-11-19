@@ -6,6 +6,7 @@ import { AbilityDetailResponse } from '../interface/ability-detail-response';
 
 @Service()
 export class AbilityService {
+
   private http = inject(HttpClient);
 
   getAll(): Observable<AbilityListResponse> {

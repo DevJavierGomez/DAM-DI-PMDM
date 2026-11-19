@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title text-capitalize">{{ AbilityDetail?.name }}</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  <p class="fw-bold mb-2">Pokémon con esta habilidad:</p>
+  @for (item of AbilityDetail?.pokemon; track item.pokemon.name) {
+    <span class="badge text-bg-secondary me-1 text-capitalize">{{ item.pokemon.name }}</span>
+  }
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activateModal.close()">Cerrar</button>
+</div>

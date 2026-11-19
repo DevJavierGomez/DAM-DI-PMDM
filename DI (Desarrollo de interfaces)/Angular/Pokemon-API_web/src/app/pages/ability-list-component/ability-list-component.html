@@ -1,1 +1,11 @@
-<p>ability-list-component works!</p>
+<div class="container my-4">
+  <div class="row g-3">
+    @for (ab of AbilityList(); track ab.name) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <app-ability-item-component
+        [ability]="ab" (AbilityClicked)="openAbilityModal($event)">
+        </app-ability-item-component>
+      </div>
+    }
+  </div>
+</div>
