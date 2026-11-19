@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title"></h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activateModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  <img [src]="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetail?.id}.png`"
+  class="card-img-top">
+  <p>pokemon: {{pokemonDetail?.name}}</p>
+  <p>Altura: {{pokemonDetail?.height}}</p>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activateModal.close()">Cerrar</button>
+</div>
