@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  imports: [],
+  imports: [ReactiveFormsModule],
   selector: 'app-form-validation',
   styleUrl: './form-validation.css',
   templateUrl: './form-validation.html',
@@ -10,20 +10,60 @@ import { FormGroup, Validators } from '@angular/forms';
 export class FormValidation {
   registerForm = new FormGroup({
 
-    nombre: new FormGroup('', [Validators.required, Validators.minLength(2), Validators.maxLength(30), Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$')]),
+    nombre: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(30),
+      Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$')
+    ]),
+    apellidos: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(50),
+      Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$')
+    ]),
+    dniNie: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^([0-9]{8}[A-Za-z]|[XYZxyz][0-9]{7}[A-Za-z])$')
+    ]),
+    telefono: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^(\\+34)?[67][0-9]{8}$')
+    ]),
 
-    Apellidos: new FormGroup('', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$')]),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(15),
+      Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')
+    ]),
 
-    DNI: new FormGroup('', [Validators.required, Validators.pattern('^([0-9]{8}[A-Za-z]|[XYZxyz][0-9]{7}[A-Za-z])$')]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
 
-    Telefono: new FormGroup('', [Validators.required, Validators.pattern('^(\+34)?[67][0-9]{8}$')]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8),
+      Validators.maxLength(20),
+      Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).+$')
+    ]),
 
-    NombreUsuario: new FormGroup('', [Validators.required, Validators.minLength(4), Validators.maxLength(15), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
+    curso: new FormControl('', Validators.required),
+    horas: new FormControl('', [
+      Validators.required,
+      Validators.min(2),
+      Validators.max(40)
+    ]),
+    codigoPostal: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^(0[1-9]|[1-4][0-9]|5[0-2])[0-9]{3}$')
+    ])
+  });
 
-    Email: new FormGroup('', [Validators.required, Validators.email]),
-
-    password: new FormGroup('', [Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).+$')]),
-
-
-  })
+  isInvalidField(field: string) {
+    return this.registerForm.get(field)?.invalid && (this.registerForm.get(field)?.dirty
+    || this.registerForm.get(field)?.touched);
+  }
 }
