@@ -1,0 +1,86 @@
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 col-xl-8">
+      <form [formGroup]="registerForm" class="card border-0 shadow">
+        <div class="card-header bg-primary text-white border-0 p-4">
+          <h1 class="h3 mb-1">Registrar Pokémon</h1>
+          <p class="mb-0 text-white">Completa los datos para añadir un nuevo registro.</p>
+        </div>
+
+        <div class="card-body p-4">
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <label for="id" class="form-label fw-semibold">ID <span class="text-danger">*</span></label>
+              <input id="id" type="number" formControlName="id" class="form-control"
+              [class.is-invalid]="isInvalidField('id')">
+              @if (isInvalidField('id')) {
+                <div class="invalid-feedback">
+                  Introduce el ID.
+                </div>
+              }
+            </div>
+            <div class="col-12 col-md-8">
+              <label for="name" class="form-label fw-semibold">Nombre <span class="text-danger">*</span></label>
+              <input id="name" type="text" formControlName="name" class="form-control"
+              [class.is-invalid]="isInvalidField('name')">
+              @if (isInvalidField('name')) {
+                <div class="invalid-feedback">
+                  Introduce un nombre de al menos 3 caracteres.
+                </div>
+              }
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+              <input id="email" type="email" formControlName="email" class="form-control"
+              [class.is-invalid]="isInvalidField('email')">
+              @if (isInvalidField('email')) {
+                <div class="invalid-feedback">
+                  Introduce un email válido.
+                </div>
+              }
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="generation" class="form-label fw-semibold">Generación <span class="text-danger">*</span></label>
+              <input id="generation" type="text" formControlName="generation" class="form-control"
+              [class.is-invalid]="isInvalidField('generation')">
+              @if (isInvalidField('generation')) {
+                <div class="invalid-feedback">
+                  Introduce la generación.
+                </div>
+              }
+            </div>
+            <div class="col-12">
+              <div class="form-check border rounded bg-light p-3 ps-5">
+                <input id="is_main_series" type="checkbox" formControlName="is_main_series" class="form-check-input">
+                <label for="is_main_series" class="form-check-label fw-semibold">¿Es de la serie principal?</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="show_effect" class="form-label fw-semibold">Efecto <span class="text-danger">*</span></label>
+              <textarea id="show_effect" formControlName="show_effect" class="form-control" rows="4"
+              [class.is-invalid]="isInvalidField('show_effect')"></textarea>
+              @if (isInvalidField('show_effect')) {
+                <div class="invalid-feedback">
+                  El efecto debe tener al menos 10 caracteres.
+                </div>
+              }
+            </div>
+            <div class="col-12">
+              <label for="pokemonName" class="form-label fw-semibold">Nombre del Pokémon <span class="text-danger">*</span></label>
+              <input id="pokemonName" type="text" formControlName="pokemonName" class="form-control"
+              [class.is-invalid]="isInvalidField('pokemonName')">
+              @if (isInvalidField('pokemonName')) {
+                <div class="invalid-feedback">
+                  Introduce el nombre del Pokémon.
+                </div>
+              }
+            </div>
+            <div class="col-12 d-flex justify-content-end pt-2">
+              <button type="submit" class="btn btn-primary btn-lg px-4">Registrar Pokémon</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

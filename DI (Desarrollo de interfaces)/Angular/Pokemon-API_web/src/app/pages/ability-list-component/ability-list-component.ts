@@ -11,7 +11,7 @@ import { AbilityItemComponent } from '../ability-item-component/ability-item-com
   styleUrl: './ability-list-component.css',
   templateUrl: './ability-list-component.html',
 })
-export class AbilityListComponent implements OnInit{
+export class AbilityListComponent implements OnInit {
 
   AbilityService = inject(AbilityService);
   AbilityList = signal<AbilityItem[]>([]);
